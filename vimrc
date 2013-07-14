@@ -52,23 +52,6 @@ set showmode
 set laststatus=2                 " Always show the StatusLine
 set nofoldenable
 
-" I have Z and ZZ to start last buffer and MRU. The original timeoutlen
-" makes me wait long when I am doing Z as its waiting for ZZ to happen.
-"set timeoutlen=200
-"set colorcolumn=80               " Shows a bar at 80 so I try to remain under it.
-if exists('+relativenumber')
-  set rnu
-  au BufEnter * :set rnu
-  au BufLeave * :set nu
-  au WinEnter * :set rnu
-  au WinLeave * :set nu
-  au InsertEnter * :set nu
-  au InsertLeave * :set rnu
-  au FocusLost * :set nu
-  au FocusGained * :set rnu
-else
-  set number
-endif
 if exists('+colorcolumn')
   set colorcolumn=80
 else
@@ -127,8 +110,6 @@ nnoremap <leader>rd :e ~/.vim/ <CR>
 "nnoremap <leader><space> :noh<cr>
 map <LEADER>R :set wrap! wrap?<CR>
 map <LEADER>P :set paste! paste?<CR>
-map <LEADER>N :set number! number?<CR>
-nnoremap <silent><F3> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
 " Cycle through changelist
 nmap <UP>   g;<CR>
@@ -361,6 +342,9 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'trailing-whitespace'
 Bundle 'psykidellic/vim-jekyll'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'myusuf3/numbers.vim'
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
 
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
