@@ -118,9 +118,9 @@ if has("gui_running")
 endif
 
 "Edit & reload .vimrc
-nnoremap <leader>rs :source ~/.vimrc<CR>
-nnoremap <leader>rt :tabnew ~/.vimrc<CR>
-nnoremap <leader>re :e ~/.vimrc<CR>
+nnoremap <leader>rs :source ~/.vim/vimrc<CR>
+nnoremap <leader>rt :tabnew ~/.vim/vimrc<CR>
+nnoremap <leader>re :e ~/.vim/vimrc<CR>
 nnoremap <leader>rd :e ~/.vim/ <CR>
 
 " Toggle stuff
