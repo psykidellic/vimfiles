@@ -339,9 +339,11 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'kchmck/vim-coffee-script'
 
 " Utility
+Bundle 'tpope/vim-repeat'
 Bundle 'trailing-whitespace'
 Bundle 'psykidellic/vim-jekyll'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-commentary'
 Bundle 'myusuf3/numbers.vim'
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
