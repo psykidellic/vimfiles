@@ -340,6 +340,7 @@ Bundle 'kchmck/vim-coffee-script'
 
 " Utility
 Bundle 'tpope/vim-repeat'
+Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'trailing-whitespace'
 Bundle 'psykidellic/vim-jekyll'
 Bundle 'tpope/vim-unimpaired'
