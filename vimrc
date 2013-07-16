@@ -6,6 +6,7 @@ filetype off                   " required!
 
 " Use the big space button.
 let mapleader = " "
+let maplocalleader = "  "
 
 " I tend to use ` as my escape key in tmux.
 " I find jumping of marks by 'a useless anyway so remap it.
@@ -254,8 +255,8 @@ map <leader>cc :s#_\(\l\)#\u\1#g<cr>
 nmap <leader>tt :!/usr/bin/ctags -R --exclude=.git --exclude=log .<CR>
 
 " copy filename
-map <silent> <leader>. :let @+=expand('%:p').':'.line('.')<CR>
-map <silent> <leader>/ :let @+=expand('%:p:h')<CR>
+map <silent> <leader>. :let @*=expand('%:p').':'.line('.')<CR>
+map <silent> <leader>/ :let @*=expand('%:p:h')<CR>
 " copy path
 
 "Git fugitive
@@ -354,6 +355,12 @@ Bundle 'myusuf3/numbers.vim'
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
+Bundle 'Lokaltog/vim-easymotion'
+let g:EasyMotion_leader_key='<LocalLeader>'
+
+Bundle 'Indent-Guides'
+let g:indent_guides_guide_size = 1
+
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
 
@@ -369,7 +376,7 @@ Bundle 'bling/vim-airline'
 " solarized.
 " mutt renders alright with default colors everywhere and if I am not on my
 " machine, I dont really need to be doing weechat/newsbeuter.
-" But with zenburn terminal vim becomes impossible with solarized colorscheme
+" ButIndent-Guides with zenburn terminal vim becomes impossible with solarized colorscheme
 " and its pain to do <F6> everywehre.
 
 " Some settinsg which seem to be applicable at different terminals
