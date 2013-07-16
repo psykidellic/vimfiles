@@ -155,6 +155,9 @@ nnoremap Q mpgqap`p
 "They don't work. Figure it out.
 "map YY    "yY
 "map YP    "yP
+" Copy to Mac clipboard when needed
+" For paste, we just use command-v in insert mode.
+map  <leader>y    "*y
 
 " search and replace word under cursor
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
