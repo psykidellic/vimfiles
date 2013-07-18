@@ -340,6 +340,8 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'lunaru/vim-less'
+Bundle 'tristen/vim-sparkup'
 
 " Utility
 Bundle 'tpope/vim-repeat'
