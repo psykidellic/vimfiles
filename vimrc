@@ -55,9 +55,8 @@ set nofoldenable
 
 if exists('+colorcolumn')
   set colorcolumn=80
-else
-  "au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
 set cursorline
 set backspace=indent,eol,start   " allow backspacing over everything in insert mode
 set wildmode=longest,list        " set tab completion to something bash-like,
@@ -351,9 +350,12 @@ Bundle 'trailing-whitespace'
 Bundle 'psykidellic/vim-jekyll'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
-Bundle 'myusuf3/numbers.vim'
-nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F4> :NumbersOnOff<CR>
+
+if version >= 730
+  Bundle 'myusuf3/numbers.vim'
+  nnoremap <F3> :NumbersToggle<CR>
+  nnoremap <F4> :NumbersOnOff<CR>
+endif
 
 Bundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_leader_key='<LocalLeader>'
