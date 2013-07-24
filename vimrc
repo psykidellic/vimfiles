@@ -340,6 +340,8 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'kchmck/vim-coffee-script'
+" autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+
 Bundle 'lunaru/vim-less'
 Bundle 'tristen/vim-sparkup'
 
@@ -362,6 +364,8 @@ let g:EasyMotion_leader_key='<LocalLeader>'
 
 Bundle 'Indent-Guides'
 let g:indent_guides_guide_size = 1
+
+Bundle 'scrooloose/nerdtree'
 
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
