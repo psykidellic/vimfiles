@@ -41,7 +41,7 @@ set hidden
 set nobackup
 set nowritebackup
 set noswapfile
-set nonumber
+set number
 set nopaste
 set ruler
 set scrolloff=3                  " Keep a margin of X lines when scrolling
