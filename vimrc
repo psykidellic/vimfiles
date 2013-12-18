@@ -353,7 +353,7 @@ Bundle 'psykidellic/vim-jekyll'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
 
-if version >= 730
+if version >= 703
   Bundle 'myusuf3/numbers.vim'
   nnoremap <F3> :NumbersToggle<CR>
   nnoremap <F4> :NumbersOnOff<CR>
