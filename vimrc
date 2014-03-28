@@ -340,6 +340,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'python.vim'
 " autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 
 Bundle 'lunaru/vim-less'
@@ -369,6 +370,7 @@ Bundle 'scrooloose/nerdtree'
 
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'jnurmine/Zenburn'
 
 " testing
 Bundle 'bling/vim-airline'
@@ -394,6 +396,13 @@ call togglebg#map("")
 "let g:solarized_termcolors=256
 "let g:solarized_termtran=1
 
-colorscheme solarized
+if match(hostname(), 'niara') > -1
+  colorscheme zenburn
+else
+  colorscheme solarized
+end
+
+" For python we use 4
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 filetype plugin indent on
