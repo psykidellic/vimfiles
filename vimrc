@@ -371,6 +371,7 @@ Bundle 'scrooloose/nerdtree'
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
+Bundle 'tpope/vim-vividchalk'
 
 " testing
 Bundle 'bling/vim-airline'
@@ -397,9 +398,9 @@ call togglebg#map("")
 "let g:solarized_termtran=1
 
 if match(hostname(), 'niara') > -1
-  colorscheme zenburn
+  " colorscheme zenburn
 else
-  colorscheme solarized
+  " colorscheme solarized
 end
 
 " For python we use 4
