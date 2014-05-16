@@ -324,7 +324,7 @@ function! BufferNumberMappings()
 endfunction
 
 "au BufWritePost *.coffee silent CoffeeMake! --bare --compile
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle
 call vundle#rc()
 
 " let Vundle manage Vundle
