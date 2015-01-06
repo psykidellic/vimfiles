@@ -248,6 +248,10 @@ Plug 'tpope/vim-vividchalk'
 
 " testing
 Plug 'bling/vim-airline'
+
+" syntastic
+Plug 'scrooloose/syntastic'
+
 " https://github.com/gmarik/vundle/issues/119#issuecomment-3089923
 " Color
 " I have a weird requirement for colorscheme. I would like to use
