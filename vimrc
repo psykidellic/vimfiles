@@ -252,6 +252,9 @@ Plug 'bling/vim-airline'
 " syntastic
 Plug 'scrooloose/syntastic'
 
+" typescript
+Plug 'leafgarland/typescript-vim'
+
 " https://github.com/gmarik/vundle/issues/119#issuecomment-3089923
 " Color
 " I have a weird requirement for colorscheme. I would like to use
@@ -269,7 +272,7 @@ Plug 'scrooloose/syntastic'
 " Some settinsg which seem to be applicable at different terminals
 " but not on my iterm. So I leave it for reference later on.
 set t_Co=256
-set background=dark
+"set background=dark
 "https://github.com/altercation/vim-colors-solarized/issues/40
 " call togglebg#map("")
 "let g:solarized_termcolors=256
