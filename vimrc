@@ -202,6 +202,8 @@ map <silent> <leader>/ :let @*=expand('%:p:h')<CR>
 map <Leader>gg  :Ggrep<space>
 "autocmd QuickFixCmdPost *grep* cwindow
 
+let g:syntastic_javascript_checkers = ['jshint']
+
 call plug#begin('~/.vim/plugged')
 
 " Programming
