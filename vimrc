@@ -171,6 +171,9 @@ nnoremap <Leader>8  :8b<CR>
 nnoremap <Leader>9  :9b<CR>
 nnoremap <Leader>0  :10b<CR>
 
+" golang helpers
+au FileType go nmap <Leader>r <Plug>(go-run)
+
 " Some improvements to make MRU better.
 nnoremap <Leader>b :MRU<CR>
 
@@ -203,6 +206,7 @@ map <Leader>gg  :Ggrep<space>
 "autocmd QuickFixCmdPost *grep* cwindow
 
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_go_checkers = ['golint']
 
 call plug#begin('~/.vim/plugged')
 
@@ -215,6 +219,7 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-markdown'
 Plug 'derekwyatt/vim-scala'
 Plug 'kchmck/vim-coffee-script'
+Plug 'fatih/vim-go'
 " Plug 'python.vim'
 " autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 
