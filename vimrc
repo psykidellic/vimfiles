@@ -116,10 +116,16 @@ call plug#end()
 
 " load syntax theme
 " This has to be at end after plugend
-" colorscheme codedark
+colorscheme codedark
 
 " options for plugins
 map <C-n> :NERDTreeToggle<CR>
 
 " filetype based stuff
-au filetype go inoremap <buffer> . .<C-x><C-o>
+" for golang
+au filetype go inoremap <buffer> . .<C-x><C-o> " autocomplete
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
