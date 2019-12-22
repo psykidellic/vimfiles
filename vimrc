@@ -102,6 +102,7 @@ Plug 'tpope/vim-fugitive' " git plugin
 Plug 'fatih/vim-go' " go
 Plug 'ntpeters/vim-better-whitespace' " complete whitespace traversal
 Plug 'tpope/vim-commentary' " simple commands to comment block of code
+Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree' " nerdtree to jump
 
 Plug 'tomasiser/vim-code-dark'
@@ -109,6 +110,10 @@ Plug 'bling/vim-airline'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'roxma/nvim-yarp'
+Plug 'Shougo/deoplete.nvim'
+
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
@@ -123,9 +128,16 @@ map <C-n> :NERDTreeToggle<CR>
 
 " filetype based stuff
 " for golang
-au filetype go inoremap <buffer> . .<C-x><C-o> " autocomplete
+" golang autocomplete doepete is required based on docs
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+" This is required as part of deoplete and vim-hug-neovim-rpc
+set encoding=utf-8
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
+
+
+" Enable deoplete
+" let g:deoplete#enable_at_startup = 1
