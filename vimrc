@@ -81,7 +81,7 @@ nnoremap vv    <C-W>v
 " last buffer
 nnoremap <silent> Z  <C-^>
 " list of buffers
-nnoremap <Leader>l :ls<CR>:b<space>
+nnoremap <Leader>l :Buffers<CR>
 nnoremap <Leader>1  :1b<CR>
 nnoremap <Leader>2  :2b<CR>
 nnoremap <Leader>3  :3b<CR>
@@ -95,7 +95,8 @@ nnoremap <Leader>0  :10b<CR>
 
 " fzf and ripgrep
 nnoremap <silent> <leader><space> :Files<CR>
-nnoremap <silent> <leader>g :Rg<space>
+nnoremap <leader>/ :Rg<space>
+nnoremap <leader>fd :Rg <C-R><C-W>
 
 call plug#begin('~/.vim/plugged')
 
@@ -110,7 +111,6 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'bling/vim-airline'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
 Plug 'Shougo/deoplete.nvim'
