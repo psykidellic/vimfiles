@@ -1,9 +1,9 @@
 " basic all encompassing
 
-set t_Co=256
-set nocompatible               " be iMproved
+set t_co=256
+set nocompatible               " be improved
 syntax enable                  " enable syntax processing
-set tabstop=4                  " number of visual spaces per TAB
+set tabstop=4                  " number of visual spaces per tab
 set softtabstop=4              " number of spaces in tab when editing
 set expandtab                  " tabs are spaces
 set noswapfile
@@ -16,8 +16,12 @@ set hidden                     " allows you to switch between unsaved buffer
 set rnu
 filetype plugin indent on
 
+" Use the big space button.
+let mapleader = " "
+let maplocalleader = "  "
+
 " cursors movements
-set colorcolumn=80             " Shows a border at 80. I like to auto indent
+set colorcolumn=80             " shows a border at 80. i like to auto indent
 set cursorline
 set backspace=indent,eol,start   " allow backspacing over everything in insert mode
 set wildmode=longest,list        " set tab completion to something bash-like,
@@ -27,21 +31,19 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-" Teach me to do things right.
+" teach me to do things right.
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-map <LEADER>P :set paste! paste?<CR> " alternate between paste and not paste
+map <leader>P :set paste! paste?<CR> " alternate between paste and not paste
 map <LEADER>R :set wrap! wrap?<CR>   " alternate between wrap and no wrap
 
 " Reformat current paragraph
 nnoremap Q mpgqap`p
-
-" Use the big space button.
-let mapleader = " "
-let maplocalleader = "  "
+" select all CTRL-A adds count so its useful
+nnoremap vA ggVG
 
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
@@ -105,6 +107,7 @@ Plug 'fatih/vim-go' " go
 Plug 'ntpeters/vim-better-whitespace' " complete whitespace traversal
 Plug 'tpope/vim-commentary' " simple commands to comment block of code
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree' " nerdtree to jump
 
 Plug 'tomasiser/vim-code-dark'
@@ -114,6 +117,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
 Plug 'Shougo/deoplete.nvim'
+Plug 'majutsushi/tagbar'
 
 let g:rg_command = 'rg --vimgrep -S'
 
@@ -126,6 +130,7 @@ colorscheme codedark
 
 " options for plugins
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <LEADER>tb :TagbarToggle<CR>
 
 " filetype based stuff
 " for golang
@@ -138,6 +143,8 @@ autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
+let g:go_fmt_command = "goimports"
+" let g:go_fmt_autosave = 0
 
 
 " Enable deoplete
