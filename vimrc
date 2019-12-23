@@ -72,6 +72,7 @@ map <Leader>w :w!<CR>
 map <Leader>W :x!<CR>
 " Quickly open a file
 map <Leader>o :e<space>
+map <Leader>O :e <c-r>=expand("%:h")<CR>/
 
 " Window, buffer management, movement
 nnoremap ss    <C-W>s
@@ -130,11 +131,11 @@ map <C-n> :NERDTreeToggle<CR>
 " for golang
 " golang autocomplete doepete is required based on docs
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+" This is required as part of deoplete and vim-hug-neovim-rpc
+set encoding=utf-8
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-" This is required as part of deoplete and vim-hug-neovim-rpc
-set encoding=utf-8
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 
