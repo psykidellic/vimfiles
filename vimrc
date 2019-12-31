@@ -112,7 +112,7 @@ Plug 'scrooloose/nerdtree' " nerdtree to jump
 
 Plug 'tomasiser/vim-code-dark'
 Plug 'bling/vim-airline'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
 Plug 'junegunn/fzf.vim'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
