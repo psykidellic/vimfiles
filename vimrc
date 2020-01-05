@@ -45,6 +45,17 @@ nnoremap Q mpgqap`p
 " select all CTRL-A adds count so its useful
 nnoremap vA ggVG
 
+" some yank improvements
+" Y behave like D or C
+nnoremap Y y$
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
+
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
 -
@@ -118,7 +129,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
 Plug 'Shougo/deoplete.nvim'
 Plug 'majutsushi/tagbar'
-
+Plug 'hashivim/vim-terraform'
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
