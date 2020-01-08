@@ -67,7 +67,7 @@ set showmatch
 set hlsearch
 
 " Hit <space> twice to clear highlights.
-noremap <silent><Leader><Leader> :nohls<CR>
+noremap <silent><Esc><Esc> :nohls<CR>
 
 " Edit & reload .vimrc
 nnoremap <leader>rs :source ~/.vim/vimrc<CR>
@@ -123,8 +123,9 @@ Plug 'scrooloose/nerdtree' " nerdtree to jump
 
 Plug 'tomasiser/vim-code-dark'
 Plug 'bling/vim-airline'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install  --no-bash' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
 Plug 'Shougo/deoplete.nvim'
