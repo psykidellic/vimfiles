@@ -37,7 +37,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-map <leader>P :set paste! paste?<CR> " alternate between paste and not paste
 map <LEADER>R :set wrap! wrap?<CR>   " alternate between wrap and no wrap
 
 " Reformat current paragraph
@@ -52,9 +51,13 @@ nnoremap Y y$
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
+" https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+
 " replace currently selected text with default register
 " without yanking it
-vnoremap <leader>p "_dP
+" vnoremap <leader>p "_dP
 
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
@@ -107,7 +110,7 @@ nnoremap <Leader>9  :9b<CR>
 nnoremap <Leader>0  :10b<CR>
 
 " fzf and ripgrep
-nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader>f :Files<CR>
 nnoremap <leader>/ :Rg<space>
 nnoremap <leader>fd :Rg <C-R><C-W>
 
@@ -131,6 +134,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'Shougo/deoplete.nvim'
 Plug 'majutsushi/tagbar'
 Plug 'hashivim/vim-terraform'
+Plug 'tpope/vim-obsession'
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
@@ -143,6 +147,15 @@ colorscheme codedark
 " options for plugins
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <LEADER>tb :TagbarToggle<CR>
+
+" sessions
+let session_dir = '~/.vim/sessions/'
+if !isdirectory(session_dir)
+    call mkdir(session_dir, 'p')
+endif
+
+nnoremap <Leader>ss :execute "Obsession " . session_dir . fnamemodify(getcwd(), ':t')<CR>
+nnoremap <Leader>sl :wall<Bar>execute "source " . session_dir . fnamemodify(getcwd(), ':t')<CR>
 
 " filetype based stuff
 " for golang

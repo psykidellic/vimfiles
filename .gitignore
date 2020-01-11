@@ -1,3 +1,4 @@
 bundle/*
 home/.vim/bundle/*
 plugged/*
+sessions/*
