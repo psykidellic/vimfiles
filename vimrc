@@ -113,11 +113,13 @@ nnoremap <silent> <leader>f :Files<CR>
 nnoremap <leader>/ :Rg<space>
 nnoremap <leader>fd :Rg <C-R><C-W>
 
-" Backups {{{
+" Backups and undos {{{
+nnoremap <leader>U :UndotreeToggle<CR>
 set backup                        " enable backups
 set noswapfile                    " it's 2013, Vim.
 
 set undodir=~/.vim/tmp/undo//     " undo files
+set undofile
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 
@@ -155,6 +157,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'majutsushi/tagbar'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-obsession'
+Plug 'mbbill/undotree'
+
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
