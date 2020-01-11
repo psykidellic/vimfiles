@@ -6,7 +6,6 @@ syntax enable                  " enable syntax processing
 set tabstop=4                  " number of visual spaces per tab
 set softtabstop=4              " number of spaces in tab when editing
 set expandtab                  " tabs are spaces
-set noswapfile
 set autoindent         	       " turns it on
 set smartindent                " does the right thing (mostly) in programs
 set shiftwidth=4               " indenting is 4 spaces
@@ -52,7 +51,7 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 " https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
-noremap <Leader>y "*y
+vnoremap <Leader>y "*y
 noremap <Leader>p "*p
 
 " replace currently selected text with default register
@@ -113,6 +112,27 @@ nnoremap <Leader>0  :10b<CR>
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <leader>/ :Rg<space>
 nnoremap <leader>fd :Rg <C-R><C-W>
+
+" Backups {{{
+set backup                        " enable backups
+set noswapfile                    " it's 2013, Vim.
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+"}}}
+
 
 call plug#begin('~/.vim/plugged')
 
