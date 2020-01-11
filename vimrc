@@ -149,7 +149,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <LEADER>tb :TagbarToggle<CR>
 
 " sessions
-let session_dir = expand($HOME . '/.vim/sessions')
+let session_dir = expand($HOME . '/.vim/sessions/')
 if !isdirectory(session_dir)
     call mkdir(session_dir, 'p')
 endif
