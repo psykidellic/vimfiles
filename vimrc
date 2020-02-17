@@ -14,6 +14,8 @@ set tw=0                       " dont wrap lines
 set number
 set hidden                     " allows you to switch between unsaved buffer
 set rnu
+set splitright
+set splitbelow
 filetype plugin indent on
 
 " Use the big space button.
@@ -52,7 +54,7 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 " https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
-noremap <Leader>y "*y
+vnoremap <Leader>y "*y
 noremap <Leader>p "*p
 
 " replace currently selected text with default register
@@ -135,6 +137,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'majutsushi/tagbar'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-obsession'
+Plug 'vimwiki/vimwiki'
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
@@ -174,3 +177,6 @@ let g:go_fmt_command = "goimports"
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
+
+" vimwiki settings
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
