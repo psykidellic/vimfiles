@@ -6,7 +6,6 @@ syntax enable                  " enable syntax processing
 set tabstop=4                  " number of visual spaces per tab
 set softtabstop=4              " number of spaces in tab when editing
 set expandtab                  " tabs are spaces
-set noswapfile
 set autoindent         	       " turns it on
 set smartindent                " does the right thing (mostly) in programs
 set shiftwidth=4               " indenting is 4 spaces
@@ -116,6 +115,29 @@ nnoremap <silent> <leader>f :Files<CR>
 nnoremap <leader>/ :Rg<space>
 nnoremap <leader>fd :Rg <C-R><C-W>
 
+" Backups and undos {{{
+nnoremap <leader>U :UndotreeToggle<CR>
+set backup                        " enable backups
+set noswapfile                    " it's 2013, Vim.
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set undofile
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+"}}}
+
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive' " git plugin
@@ -138,6 +160,8 @@ Plug 'majutsushi/tagbar'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-obsession'
 Plug 'vimwiki/vimwiki'
+Plug 'mbbill/undotree'
+
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
