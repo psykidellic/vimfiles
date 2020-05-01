@@ -198,6 +198,8 @@ let g:go_highlight_function_calls = 1
 let g:go_fmt_command = "goimports"
 " let g:go_fmt_autosave = 0
 
+" correct yaml indentation
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
