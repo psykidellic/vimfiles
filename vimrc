@@ -156,6 +156,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
 Plug 'Shougo/deoplete.nvim'
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'majutsushi/tagbar'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-obsession'
@@ -206,3 +207,6 @@ let g:deoplete#enable_at_startup = 1
 
 " vimwiki settings
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+
+" quickly enable Jenkinsfile
+au BufNewFile,BufRead Jenkinsfile setf groovy
