@@ -162,11 +162,14 @@ Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-obsession'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
+Plug 'davidhalter/jedi-vim'
 
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
 call plug#end()
+
+let g:jedi#completions_enabled = 0
 
 " load syntax theme
 " This has to be at end after plugend
