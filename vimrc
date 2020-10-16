@@ -23,7 +23,6 @@ let maplocalleader = "  "
 
 " cursors movements
 set colorcolumn=80             " shows a border at 80. i like to auto indent
-set cursorline
 set backspace=indent,eol,start   " allow backspacing over everything in insert mode
 set wildmode=longest,list        " set tab completion to something bash-like,
 " sane movement with wrap turned on
@@ -163,17 +162,19 @@ Plug 'tpope/vim-obsession'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'davidhalter/jedi-vim'
+Plug 'dense-analysis/ale'
 
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
 call plug#end()
 
-let g:jedi#completions_enabled = 0
+" python improvements for big projeects
+let g:jedi#completions_enabled = 0 " since we use deoplete
 
-" load syntax theme
-" This has to be at end after plugend
-colorscheme codedark
+" use pycodestyle instead of flake8
+let g:ale_python_flake8_executable = 'pycodestyle'
+let g:ale_python_flake8_options = '--max-line-length 90'
 
 " options for plugins
 map <C-n> :NERDTreeToggle<CR>
@@ -187,6 +188,9 @@ endif
 
 nnoremap <Leader>ss :execute "Obsession " . session_dir . fnamemodify(getcwd(), ':t')<CR>
 nnoremap <Leader>sl :wall<Bar>execute "source " . session_dir . fnamemodify(getcwd(), ':t')<CR>
+
+" enable deoplete for python
+autocmd FileType python call deoplete#enable()
 
 " filetype based stuff
 " for golang
@@ -204,9 +208,6 @@ let g:go_fmt_command = "goimports"
 
 " correct yaml indentation
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-" Enable deoplete
-let g:deoplete#enable_at_startup = 1
 
 " vimwiki settings
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
