@@ -147,11 +147,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree' " nerdtree to jump
 
-Plug 'tomasiser/vim-code-dark'
 Plug 'bling/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install  --no-bash' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
+" distraction free writing if i ever get to it
+" Plug 'junegunn/goyo.vim'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
 Plug 'Shougo/deoplete.nvim'
@@ -163,11 +163,14 @@ Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'davidhalter/jedi-vim'
 Plug 'dense-analysis/ale'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 let g:rg_command = 'rg --vimgrep -S'
 
 " Add plugins to &runtimepath
 call plug#end()
+
+colorscheme dracula
 
 " python improvements for big projeects
 let g:jedi#completions_enabled = 0 " since we use deoplete
