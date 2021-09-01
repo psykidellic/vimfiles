@@ -153,16 +153,10 @@ Plug 'junegunn/fzf.vim'
 " distraction free writing if i ever get to it
 " Plug 'junegunn/goyo.vim'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'roxma/nvim-yarp'
-Plug 'Shougo/deoplete.nvim'
-Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'majutsushi/tagbar'
-Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-obsession'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
-Plug 'davidhalter/jedi-vim'
-Plug 'dense-analysis/ale'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 let g:rg_command = 'rg --vimgrep -S'
@@ -193,12 +187,13 @@ nnoremap <Leader>ss :execute "Obsession " . session_dir . fnamemodify(getcwd(), 
 nnoremap <Leader>sl :wall<Bar>execute "source " . session_dir . fnamemodify(getcwd(), ':t')<CR>
 
 " enable deoplete for python
-autocmd FileType python call deoplete#enable()
+" autocmd FileType python call deoplete#enable()
 
 " filetype based stuff
 " for golang
 " golang autocomplete doepete is required based on docs
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+" call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+
 " This is required as part of deoplete and vim-hug-neovim-rpc
 set encoding=utf-8
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
