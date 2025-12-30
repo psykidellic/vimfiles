@@ -140,7 +140,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive' " git plugin
-Plug 'fatih/vim-go' " go
+" Plug 'fatih/vim-go' " go
 Plug 'ntpeters/vim-better-whitespace' " complete whitespace traversal
 Plug 'tpope/vim-commentary' " simple commands to comment block of code
 Plug 'tpope/vim-surround'
@@ -196,12 +196,12 @@ nnoremap <Leader>sl :wall<Bar>execute "source " . session_dir . fnamemodify(getc
 
 " This is required as part of deoplete and vim-hug-neovim-rpc
 set encoding=utf-8
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_fmt_command = "goimports"
+" autocmd FileType go nmap <leader>b  <Plug>(go-build)
+" autocmd FileType go nmap <leader>r  <Plug>(go-run)
+" autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+" let g:go_highlight_functions = 1
+" let g:go_highlight_function_calls = 1
+" let g:go_fmt_command = "goimports"
 " let g:go_fmt_autosave = 0
 
 " correct yaml indentation
